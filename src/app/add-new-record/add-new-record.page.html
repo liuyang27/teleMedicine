@@ -1,0 +1,94 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title id="appTitle">
+      Tele Medicine APP
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<!-- <ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>New Record</ion-title>
+  </ion-toolbar>
+</ion-header> -->
+
+<ion-content>
+  <ion-header>
+    <ion-toolbar color="primary">
+      <ion-title id="addnewdiv">
+        Add New Record
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card>
+    <ion-item>
+      <ion-card-header>
+        <ion-card-title>Q{{qNumber+1}}: {{question}}</ion-card-title>
+        <div *ngIf="subQuestion.length>0">
+          <p *ngFor="let s of subQuestion">{{s}}</p>
+        </div>
+      </ion-card-header>
+    </ion-item>
+
+
+
+    <ion-card-content *ngIf="type=='Text+Dropdownlist'">
+      <form #userForm="ngForm" (ngSubmit)="onSubmit()">
+        <!-- {{userForm.value | json}} -->
+        <ion-item>
+          <ion-input placeholder="Enter here..." name="data" [(ngModel)]=answerModel.data></ion-input>
+          <ion-select interface="popover" name="unit" [(ngModel)]=answerModel.type>
+            <ion-select-option *ngFor="let opt of options">{{opt}}</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <br><br>
+        <div style="display: flex;justify-content:space-around;">
+          <ion-button color="primary" style="width:30%;" (click)="loadPreQuestion();$event.preventDefault()"
+            *ngIf="qNumber !=0">Pre</ion-button>
+          <ion-button color="primary" type="submit" style="width:30%;">next</ion-button>
+        </div>
+      </form>
+    </ion-card-content>
+
+    <ion-card-content *ngIf="type=='Buttons'">
+      <p *ngFor="let opt of options">
+        <ion-button expand="full" shape="round" color="primary" (click)="btnClick(opt)">{{opt}}</ion-button>
+      </p>
+      <br><br>
+      <ion-button color="primary" style="width:30%;" (click)="loadPreQuestion()" *ngIf="qNumber !=0">Pre</ion-button>
+
+    </ion-card-content>
+
+    <ion-card-content *ngIf="type=='Text'">
+      <form #userForm="ngForm" (ngSubmit)="onSubmitTextarea()">
+        <!-- {{userForm.value | json}} -->
+     
+        <ion-item>
+          <ion-textarea name="data" [(ngModel)]=answerModel.data placeholder="Enter more information here..." rows="6" maxlength="50">
+          </ion-textarea>
+        </ion-item>
+        <br><br>
+        <div style="display: flex;justify-content:space-around;">
+          <ion-button color="primary" style="width:30%;" (click)="loadPreQuestion();$event.preventDefault()"
+            *ngIf="qNumber !=0">Pre</ion-button>
+          <ion-button color="primary" type="submit" style="width:30%;">next</ion-button>
+        </div>
+      </form>
+    </ion-card-content>
+
+
+
+
+  </ion-card>
+
+
+
+
+</ion-content>

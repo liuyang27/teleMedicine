@@ -1,0 +1,24 @@
+#detaildiv{
+    display: inline-flex;
+    display: -webkit-flex; /* Safari */
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: x-large;
+  }
+
+#answerdiv{
+  text-align: left;
+  font-weight:bold;
+  font-size: large;
+  white-space:pre-wrap;
+  word-wrap:break-word;
+  margin-bottom: 0px;
+}
+
+#qrcodediv{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

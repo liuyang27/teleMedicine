@@ -1,0 +1,56 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="primary">
+    <ion-title id="appTitle">
+      Tele Medicine APP
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-header>
+  <ion-toolbar>
+    <div id="userdiv">
+      <div>
+        <ion-avatar slot="start">
+          <img src="assets/images/user_icon.jpg">
+        </ion-avatar>
+      </div>
+      <div>
+        <ion-title size="large">John Doe</ion-title>
+        <ion-title size="small">John Doe@gmail.com</ion-title>
+      </div>
+    </div>
+    <ion-button color="primary" shape="round" fill="outline" [routerLink]="[ '/add-new-record']">+ Add</ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <div>
+    <!-- List Headers in Lists -->
+    <ion-list>
+      <ion-list-header lines="inset">
+        <ion-label color="primary">
+          <h1>All Records</h1>
+        </ion-label>
+      </ion-list-header>
+
+      <div *ngIf="records.length>0">
+        <ion-item-divider>
+          <ion-title size="large">Number</ion-title>
+          <ion-title size="large">Datetime</ion-title>
+        </ion-item-divider>
+
+        <ion-item-sliding *ngFor="let record of records;let i = index;">
+          <ion-item (click)="getDetailsById(record.id)" [routerLink]="['/', 'record-detail', record.id]">
+            <ion-title size="large">{{i+1}}</ion-title>
+            <ion-title size="large">{{record.createdDateTime}}</ion-title>
+          </ion-item>
+          <ion-item-options side="end">
+            <ion-item-option color="danger" (click)="deleteRecordById(record.id)">Delete</ion-item-option>
+          </ion-item-options>
+        </ion-item-sliding>
+      </div>
+
+    </ion-list>
+
+  </div>
+</ion-content>

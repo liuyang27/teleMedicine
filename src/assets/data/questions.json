@@ -1,0 +1,69 @@
+[
+	{
+		"question":"When did palpitation start?",
+		"type":"Text+Dropdownlist",
+		"options":["Days ago","Month ago","Weeks ago"],
+		"subQuestion":[]
+	},
+	{
+		"question":"How long does each palpitation episode last?",
+		"type":"Text+Dropdownlist",
+		"options":["Seconds","Minutes","Hours"],
+		"subQuestion":[]
+	},
+	{
+		"question":"Does the palpitations feel regular or irregular?",
+		"type":"Buttons",
+		"options":["Regular","Irregular"],
+		"subQuestion":[]
+	},
+	{
+		"question":"What triggers the palpitations?(Max. 50 characters)",
+		"type":"Text",
+		"options":[],
+		"subQuestion":[]
+	},
+	{
+		"question":"What stops the palpitations?(Max. 50 characters)",
+		"type":"Text",
+		"options":[],
+		"subQuestion":[]
+	},
+	{
+		"question":"Any documented heart rate during episodes of palpitations and via what mode e.g. BP machine, steptracker?(Max. 50 characters)",
+		"type":"Text",
+		"options":[],
+		"subQuestion":[]
+	},
+	{
+		"question":"Is there any possibility of pregnancy?",
+		"type":"Buttons",
+		"options":["Yes","No"],
+		"subQuestion":[]
+	},
+	{
+		"question":"Are there hot flushes, loss of weight, tremors, heat intolerance or neck swelling?",
+		"type":"Buttons",
+		"options":["Yes","No"],
+		"subQuestion":[]
+	},
+		{
+		"question":"Do you have any of the following:",
+		"subQuestion":[
+			"• Family history of sudden cardiac death or weak heart?",
+			"• Palpitations with fainting or near fainting episodes?",
+			"• History of heart murmur ?",
+			"• Shortness of breath, leg swelling or requiring more than 1 pillow to sleep at night?",
+			"• Palpitations during exercise",
+			"• History of stroke or irregular heart rate"
+		],
+		"type":"Buttons",
+		"options":["Yes","No"]
+	},
+		{
+		"question":"Is this the first time having such palpitations?",
+		"type":"Buttons",
+		"options":["Yes","No"],
+		"subQuestion":[]
+	}
+]

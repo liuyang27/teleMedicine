@@ -1,0 +1,8 @@
+{
+  "name": "TeleMedicine",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}
